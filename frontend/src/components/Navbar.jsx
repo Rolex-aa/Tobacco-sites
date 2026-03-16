@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="container nav-inner">
-        <div className="logo">🌿 TobaccoMaster</div>
+        <div className="logo">🌿 NK Engineering & Works</div>
         <nav className="nav-links">
           <a onClick={() => scrollTo('hero')}>Home</a>
           <a onClick={() => scrollTo('product')}>Machine</a>

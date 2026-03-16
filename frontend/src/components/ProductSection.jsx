@@ -1,7 +1,7 @@
 import React from 'react';
 
 const specs = [
-  ['🏷️ Model',         'TobaccoMaster Pro 5000'],
+  ['🏷️ Model',         'NK Engineering Pro 5000'],
   ['⚡ Motor Power',    '3 HP – Heavy Duty'],
   ['🔢 Output Capacity','5,000 cigarettes / hour'],
   ['⚙️ Machine Weight', '180 kg'],
@@ -18,12 +18,12 @@ export default function ProductSection() {
     <section className="product-section" id="product">
       <div className="container">
         <div className="section-title">
-          <h2>TobaccoMaster Pro 5000</h2>
+          <h2>NK Engineering Pro 5000</h2>
           <p>A complete tobacco making solution designed for high output and long durability</p>
         </div>
         <div className="product-grid">
           <div className="product-image-box">
-            <img src="/machine.png" alt="TobaccoMaster Pro 5000" />
+            <img src="/machine.png" alt="NK Engineering Pro 5000" />
             <div className="price-badge">₹1,00,000</div>
           </div>
           <div className="product-info">

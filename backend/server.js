@@ -16,7 +16,7 @@ app.use(express.json());
 app.use('/api/enquiries', enquiriesRouter);
 
 app.get('/', (req, res) => {
-  res.json({ message: 'TobaccoMaster API is running ✅' });
+  res.json({ message: 'NK Engineering API is running ✅' });
 });
 
 // ── Connect & Start ─────────────────────────────────────────

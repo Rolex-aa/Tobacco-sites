@@ -51,7 +51,7 @@ export default function ContactSection() {
               <span className="contact-icon">📧</span>
               <div>
                 <strong>Email Us</strong>
-                <a href="mailto:sales@tobaccomaster.in">sales@tobaccomaster.in</a>
+                <a href="mailto:sales@nkengineering.in">sales@nkengineering.in</a>
               </div>
             </div>
             <div className="contact-item">

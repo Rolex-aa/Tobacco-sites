@@ -27,7 +27,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-image-wrap">
-        <img src="/machine.png" alt="TobaccoMaster Pro 5000 Machine" className="hero-img" />
+        <img src="/machine.png" alt="NK Engineering Pro 5000 Machine" className="hero-img" />
       </div>
     </section>
   );

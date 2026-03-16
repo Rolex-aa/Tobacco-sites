@@ -102,10 +102,14 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 .logo {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--green-lt);
   letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.logo span {
+  color: var(--gold);
 }
 .nav-links {
   display: flex;
