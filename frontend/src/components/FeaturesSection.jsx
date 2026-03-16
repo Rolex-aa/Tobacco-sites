@@ -17,7 +17,7 @@ export default function FeaturesSection() {
     <section className="features-section" id="features">
       <div className="container">
         <div className="section-title light">
-          <h2>Key Features</h2>
+          <h2>Machine Parts & Components</h2>
           <p>Everything you need for a successful tobacco business</p>
         </div>
         <div className="features-grid">

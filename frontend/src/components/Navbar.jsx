@@ -10,9 +10,10 @@ export default function Navbar() {
       <div className="container nav-inner">
         <div className="logo">🌿 TobaccoMaster</div>
         <nav className="nav-links">
-          <a onClick={() => scrollTo('product')}>Our Machine</a>
-          <a onClick={() => scrollTo('features')}>Features</a>
-          <a onClick={() => scrollTo('how-it-works')}>How It Works</a>
+          <a onClick={() => scrollTo('hero')}>Home</a>
+          <a onClick={() => scrollTo('product')}>Machine</a>
+          <a onClick={() => scrollTo('features')}>Machine Parts</a>
+          <a onClick={() => scrollTo('repairing')}>Repairing</a>
           <a className="btn-nav" onClick={() => scrollTo('contact')}>📞 Contact Us</a>
         </nav>
       </div>
