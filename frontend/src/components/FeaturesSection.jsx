@@ -14,18 +14,18 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="features-section" id="features">
-      <div className="container">
-        <div className="section-title light">
-          <h2>Machine Parts & Components</h2>
-          <p>Everything you need for a successful tobacco business</p>
+    <section className="py-24 bg-gradient-to-br from-nk-dark to-nk-dark2" id="features">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Machine Parts & Components</h2>
+          <p className="text-lg text-white/70 max-w-xl mx-auto">Everything you need for a successful tobacco business</p>
         </div>
-        <div className="features-grid">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f) => (
-            <div className="feature-card" key={f.title}>
-              <div className="feat-icon">{f.icon}</div>
-              <h4>{f.title}</h4>
-              <p>{f.desc}</p>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm transition-all hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl hover:shadow-black/20" key={f.title}>
+              <div className="text-5xl mb-4">{f.icon}</div>
+              <h4 className="text-xl font-bold text-white mb-2.5">{f.title}</h4>
+              <p className="text-[16px] text-white/65 leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

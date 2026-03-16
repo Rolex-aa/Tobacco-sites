@@ -8,279 +8,331 @@
   <meta name="description"
     content="Buy the best tobacco making machine at ₹1,00,000 from NK Engineering & Works. High quality, easy to use, and built for professionals. Order now." />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'nk-green': '#2e7d32',
+            'nk-green-lt': '#4caf50',
+            'nk-gold': '#f59e0b',
+            'nk-dark': '#1a1a2e',
+            'nk-dark2': '#16213e',
+            'nk-off-white': '#f5f5f0',
+          },
+          animation: {
+            'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
+          },
+          keyframes: {
+            'bounce-subtle': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 
-<body>
+<body class="bg-nk-off-white text-gray-900 text-lg leading-relaxed">
 
   <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <div class="logo">🌿 NK Engineering & Works</div>
-      <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#product">Machine</a>
-        <a href="#features">Machine Parts</a>
-        <a href="#repairing">Repairing</a>
-        <a href="#contact" class="btn-nav">📞 Contact Us</a>
+  <header class="sticky top-0 z-[999] bg-nk-dark2/95 backdrop-blur-md border-b border-white/5 py-3">
+    <div class="container mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
+      <div class="text-2xl font-extrabold text-nk-green-lt tracking-tight uppercase">🌿 NK Engineering <span class="text-nk-gold">& Works</span></div>
+      <nav class="flex items-center gap-7 flex-wrap">
+        <a href="#hero" class="text-white/85 text-[17px] font-semibold hover:text-nk-gold transition-colors">Home</a>
+        <a href="#product" class="text-white/85 text-[17px] font-semibold hover:text-nk-gold transition-colors">Machine</a>
+        <a href="#features" class="text-white/85 text-[17px] font-semibold hover:text-nk-gold transition-colors">Machine Parts</a>
+        <a href="#repairing" class="text-white/85 text-[17px] font-semibold hover:text-nk-gold transition-colors">Repairing</a>
+        <a href="#contact" class="bg-nk-gold text-nk-dark font-bold px-7 py-3 rounded-full text-[17px] hover:-translate-y-0.5 transition-transform">📞 Contact Us</a>
       </nav>
     </div>
   </header>
 
   <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="badge">✅ Trusted by 500+ Businesses</span>
-      <h1>NK Engineering<br /><span class="highlight">Tobacco Making Machine</span></h1>
-      <p class="hero-sub">Powerful. Reliable. Easy to Operate. Built for your success.</p>
-      <div class="price-tag">Price: <strong>₹1,00,000</strong> <span>only</span></div>
-      <div class="hero-btns">
-        <a href="#contact" id="btn-order" class="btn-primary">🛒 Order Now</a>
-        <a href="#product" id="btn-details" class="btn-secondary">See Details ↓</a>
+  <section class="relative bg-[#0f2027] overflow-hidden min-h-[80vh] flex items-center" id="hero">
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_70%_50%,rgba(46,125,50,0.18)_0%,transparent_70%)]"></div>
+    <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div class="max-w-xl text-left">
+        <span class="inline-block bg-nk-gold/20 border border-nk-gold text-nk-gold text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
+          ✅ Trusted by 500+ Businesses
+        </span>
+        <h1 class="text-white text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+          India's Best <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-nk-green-lt to-nk-gold">
+            Tobacco Making Machine
+          </span>
+        </h1>
+        <p class="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
+          Powerful. Reliable. Easy to Operate. Built for your success.
+        </p>
+        <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl mb-10">
+          <span class="text-gray-300 text-xl">Price:</span>
+          <strong class="text-nk-gold text-3xl font-bold">₹1,00,000</strong>
+          <span class="text-gray-400 text-sm">only</span>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" id="btn-order" 
+             class="bg-gradient-to-br from-nk-green to-nk-green-lt text-white text-xl font-bold px-10 py-4 rounded-full shadow-lg shadow-nk-green/40 hover:-translate-y-1 transition-transform">
+            🛒 Order Now
+          </a>
+          <a href="#product" id="btn-details" 
+             class="bg-white/10 text-white text-xl font-semibold px-9 py-4 rounded-full border-2 border-white/40 backdrop-blur-md hover:bg-white/20 hover:-translate-y-1 transition-all">
+            See Details ↓
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="hero-image-wrap">
-      <img src="machine.png" alt="NK Engineering Pro 5000 Machine" class="hero-img" />
+      <div class="relative w-full md:w-1/2 flex justify-center md:justify-end animate-bounce-subtle">
+        <img src="machine.png" alt="Tobacco Making Machine" class="max-w-full h-auto drop-shadow-2xl" />
+      </div>
     </div>
   </section>
 
   <!-- ===== PRODUCT SECTION ===== -->
-  <section class="product-section" id="product">
-    <div class="container">
-      <div class="section-title">
-        <h2>NK Engineering & Works</h2>
-        <p>A complete tobacco making solution designed for high output and long durability</p>
+  <section class="py-24 bg-nk-off-white" id="product">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-nk-dark mb-3">NK Engineering & Works</h2>
+        <p class="text-lg text-gray-500 max-w-xl mx-auto">A complete tobacco making solution designed for high output and long durability</p>
       </div>
-      <div class="product-grid">
-        <div class="product-image-box">
-          <img src="machine.png" alt="NK Engineering Pro 5000" />
-          <div class="price-badge">₹1,00,000</div>
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+        <div class="relative bg-white rounded-2xl p-6 shadow-2xl">
+          <img src="machine.png" alt="NK Engineering Pro 5000" class="rounded-xl" />
+          <div class="absolute top-4.5 right-4.5 bg-gradient-to-br from-nk-green to-nk-green-lt text-white text-xl font-extrabold px-5 py-2.5 rounded-full shadow-lg shadow-nk-green/40">₹1,00,000</div>
         </div>
         <div class="product-info">
-          <h3>Machine Specifications</h3>
-          <table class="spec-table">
-            <tr>
-              <td>🏷️ Model</td>
-              <td>NK Engineering Pro 5000</td>
-            </tr>
-            <tr>
-              <td>⚡ Motor Power</td>
-              <td>3 HP – Heavy Duty</td>
-            </tr>
-            <tr>
-              <td>🔢 Output Capacity</td>
-              <td>5,000 cigarettes / hour</td>
-            </tr>
-            <tr>
-              <td>⚙️ Machine Weight</td>
-              <td>180 kg</td>
-            </tr>
-            <tr>
-              <td>📐 Dimensions</td>
-              <td>120 × 80 × 110 cm</td>
-            </tr>
-            <tr>
-              <td>🔌 Power Supply</td>
-              <td>220V / 50Hz, Single Phase</td>
-            </tr>
-            <tr>
-              <td>🌡️ Operating Temp</td>
-              <td>10°C – 45°C</td>
-            </tr>
-            <tr>
-              <td>🔧 Material</td>
-              <td>Food-Grade Stainless Steel</td>
-            </tr>
-            <tr>
-              <td>📦 Warranty</td>
-              <td>1 Year Full Warranty</td>
-            </tr>
-            <tr>
-              <td>🚚 Delivery</td>
-              <td>Pan-India Free Delivery</td>
-            </tr>
-          </table>
+          <h3 class="text-2xl font-extrabold text-nk-dark mb-6">Machine Specifications</h3>
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <table class="w-full border-collapse">
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">🏷️ Model</td>
+                <td class="p-3.5 text-gray-700">NK Engineering Pro 5000</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">⚡ Motor Power</td>
+                <td class="p-3.5 text-gray-700">3 HP – Heavy Duty</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">🔢 Output Capacity</td>
+                <td class="p-3.5 text-gray-700">5,000 cigarettes / hour</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">⚙️ Machine Weight</td>
+                <td class="p-3.5 text-gray-700">180 kg</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">📐 Dimensions</td>
+                <td class="p-3.5 text-gray-700">120 × 80 × 110 cm</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">🔌 Power Supply</td>
+                <td class="p-3.5 text-gray-700">220V / 50Hz, Single Phase</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">🌡️ Operating Temp</td>
+                <td class="p-3.5 text-gray-700">10°C – 45°C</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">🔧 Material</td>
+                <td class="p-3.5 text-gray-700">Food-Grade Stainless Steel</td>
+              </tr>
+              <tr class="border-b border-gray-100 odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">📦 Warranty</td>
+                <td class="p-3.5 text-gray-700">1 Year Full Warranty</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-gray-50/50">
+                <td class="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">🚚 Delivery</td>
+                <td class="p-3.5 text-gray-700">Pan-India Free Delivery</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== FEATURES SECTION ===== -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-title light">
-        <h2>Machine Parts & Components</h2>
-        <p>Everything you need for a successful tobacco business</p>
+  <section class="py-24 bg-gradient-to-br from-nk-dark to-nk-dark2" id="features">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Machine Parts & Components</h2>
+        <p class="text-lg text-white/70 max-w-xl mx-auto">Everything you need for a successful tobacco business</p>
       </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feat-icon">⚡</div>
-          <h4>High Speed Output</h4>
-          <p>Produces up to 5,000 cigarettes per hour with consistent quality every time.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">⚡</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">High Speed Output</h4>
+          <p class="text-base text-white/65">Produces up to 5,000 cigarettes per hour with consistent quality every time.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🛡️</div>
-          <h4>Durable Build</h4>
-          <p>Made with food-grade stainless steel for a rust-free, long-lasting machine.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Durable Build</h4>
+          <p class="text-base text-white/65">Made with food-grade stainless steel for a rust-free, long-lasting machine.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🎛️</div>
-          <h4>Digital Control Panel</h4>
-          <p>Easy-to-read digital display. Simple buttons – no technical training needed.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🎛️</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Digital Control Panel</h4>
+          <p class="text-base text-white/65">Easy-to-read digital display. Simple buttons – no technical training needed.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🔇</div>
-          <h4>Low Noise Operation</h4>
-          <p>Engineered to run quietly so your workplace stays comfortable and calm.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🔇</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Low Noise Operation</h4>
+          <p class="text-base text-white/65">Engineered to run quietly so your workplace stays comfortable and calm.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🔧</div>
-          <h4>Easy Maintenance</h4>
-          <p>Removable parts make cleaning and servicing quick and hassle-free.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🔧</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Easy Maintenance</h4>
+          <p class="text-base text-white/65">Removable parts make cleaning and servicing quick and hassle-free.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🚀</div>
-          <h4>Fast Start-Up</h4>
-          <p>Machine is ready to operate within 2 minutes of switching on.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🚀</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Fast Start-Up</h4>
+          <p class="text-base text-white/65">Machine is ready to operate within 2 minutes of switching on.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🔐</div>
-          <h4>Safety Lock System</h4>
-          <p>Built-in safety locks prevent accidents and protect the operator.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🔐</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Safety Lock System</h4>
+          <p class="text-base text-white/65">Built-in safety locks prevent accidents and protect the operator.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">📦</div>
-          <h4>Free Delivery & Setup</h4>
-          <p>We deliver to your location across India and help set up the machine.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">📦</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">Free Delivery & Setup</h4>
+          <p class="text-base text-white/65">We deliver to your location across India and help set up the machine.</p>
         </div>
-        <div class="feature-card">
-          <div class="feat-icon">🛠️</div>
-          <h4>1 Year Warranty</h4>
-          <p>Full manufacturer warranty on all parts and free service visits included.</p>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:-translate-y-1.5 hover:bg-white/10 hover:shadow-2xl transition-all">
+          <div class="text-4xl mb-4">🛠️</div>
+          <h4 class="text-xl font-bold text-white mb-2.5">1 Year Warranty</h4>
+          <p class="text-base text-white/65">Full manufacturer warranty on all parts and free service visits included.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== REPAIRING & MAINTENANCE ===== -->
-  <section class="how-section" id="repairing">
-    <div class="container">
-      <div class="section-title">
-        <h2>Repairing & Maintenance</h2>
-        <p>Expert support and easy maintenance steps for long-lasting performance</p>
+  <section class="py-24 bg-nk-off-white" id="repairing">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-nk-dark mb-3">Repairing & Maintenance</h2>
+        <p class="text-lg text-gray-500 max-w-xl mx-auto">Expert support and easy maintenance steps for long-lasting performance</p>
       </div>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">🛠️</div>
-          <h4>Easy Cleaning</h4>
-          <p>Simple daily cleaning keeps the machine running like new for years.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3 md:gap-6">
+        <div class="bg-white rounded-2xl p-9 text-center flex-1 min-w-[180px] max-w-[220px] shadow-2xl hover:-translate-y-1.5 transition-transform">
+          <div class="w-14 h-14 bg-gradient-to-br from-nk-green to-nk-green-lt rounded-full text-white text-2xl font-extrabold flex items-center justify-center mx-auto mb-4.5 shadow-lg shadow-nk-green/35">🛠️</div>
+          <h4 class="text-lg font-bold text-nk-dark mb-2.5">Easy Cleaning</h4>
+          <p class="text-[15px] text-gray-500">Simple daily cleaning keeps the machine running like new for years.</p>
         </div>
-        <div class="step-arrow">→</div>
-        <div class="step-card">
-          <div class="step-num">⚙️</div>
-          <h4>Part Replacement</h4>
-          <p>Genuie spare parts are easy to swap with standard tools in minutes.</p>
+        <div class="text-3xl text-nk-green-lt font-bold shrink-0 rotate-90 md:rotate-0">→</div>
+        <div class="bg-white rounded-2xl p-9 text-center flex-1 min-w-[180px] max-w-[220px] shadow-2xl hover:-translate-y-1.5 transition-transform">
+          <div class="w-14 h-14 bg-gradient-to-br from-nk-green to-nk-green-lt rounded-full text-white text-2xl font-extrabold flex items-center justify-center mx-auto mb-4.5 shadow-lg shadow-nk-green/35">⚙️</div>
+          <h4 class="text-lg font-bold text-nk-dark mb-2.5">Part Replacement</h4>
+          <p class="text-[15px] text-gray-500">Genuie spare parts are easy to swap with standard tools in minutes.</p>
         </div>
-        <div class="step-arrow">→</div>
-        <div class="step-card">
-          <div class="step-num">📋</div>
-          <h4>Annual Service</h4>
-          <p>Scheduled maintenance visits by our experts ensure zero breakdown.</p>
+        <div class="text-3xl text-nk-green-lt font-bold shrink-0 rotate-90 md:rotate-0">→</div>
+        <div class="bg-white rounded-2xl p-9 text-center flex-1 min-w-[180px] max-w-[220px] shadow-2xl hover:-translate-y-1.5 transition-transform">
+          <div class="w-14 h-14 bg-gradient-to-br from-nk-green to-nk-green-lt rounded-full text-white text-2xl font-extrabold flex items-center justify-center mx-auto mb-4.5 shadow-lg shadow-nk-green/35">📋</div>
+          <h4 class="text-lg font-bold text-nk-dark mb-2.5">Annual Service</h4>
+          <p class="text-[15px] text-gray-500">Scheduled maintenance visits by our experts ensure zero breakdown.</p>
         </div>
-        <div class="step-arrow">→</div>
-        <div class="step-card">
-          <div class="step-num">📞</div>
-          <h4>24/7 Support</h4>
-          <p>Speak directly to our technicians for any queries or troubleshooting.</p>
+        <div class="text-3xl text-nk-green-lt font-bold shrink-0 rotate-90 md:rotate-0">→</div>
+        <div class="bg-white rounded-2xl p-9 text-center flex-1 min-w-[180px] max-w-[220px] shadow-2xl hover:-translate-y-1.5 transition-transform">
+          <div class="w-14 h-14 bg-gradient-to-br from-nk-green to-nk-green-lt rounded-full text-white text-2xl font-extrabold flex items-center justify-center mx-auto mb-4.5 shadow-lg shadow-nk-green/35">📞</div>
+          <h4 class="text-lg font-bold text-nk-dark mb-2.5">24/7 Support</h4>
+          <p class="text-[15px] text-gray-500">Speak directly to our technicians for any queries or troubleshooting.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHY CHOOSE US ===== -->
-  <section class="trust-section">
-    <div class="container">
-      <div class="trust-grid">
-        <div class="trust-item">
-          <div class="trust-num">500+</div>
-          <div>Happy Customers</div>
+  <section class="bg-gradient-to-r from-nk-green to-[#388e3c] py-15">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="text-white">
+          <div class="text-3xl md:text-5xl font-extrabold mb-1.5">500+</div>
+          <div class="text-[17px] opacity-85 font-semibold">Happy Customers</div>
         </div>
-        <div class="trust-item">
-          <div class="trust-num">15+</div>
-          <div>Years Experience</div>
+        <div class="text-white">
+          <div class="text-3xl md:text-5xl font-extrabold mb-1.5">15+</div>
+          <div class="text-[17px] opacity-85 font-semibold">Years Experience</div>
         </div>
-        <div class="trust-item">
-          <div class="trust-num">Pan-India</div>
-          <div>Free Delivery</div>
+        <div class="text-white">
+          <div class="text-3xl md:text-5xl font-extrabold mb-1.5">Pan-India</div>
+          <div class="text-[17px] opacity-85 font-semibold">Free Delivery</div>
         </div>
-        <div class="trust-item">
-          <div class="trust-num">24/7</div>
-          <div>Customer Support</div>
+        <div class="text-white">
+          <div class="text-3xl md:text-5xl font-extrabold mb-1.5">24/7</div>
+          <div class="text-[17px] opacity-85 font-semibold">Customer Support</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTACT SECTION ===== -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <div class="section-title light">
-        <h2>📞 Contact Us to Order</h2>
-        <p>Our team speaks Hindi &amp; English. We are happy to help you!</p>
+  <section class="py-24 bg-gradient-to-br from-nk-dark to-nk-dark2" id="contact">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">📞 Contact Us to Order</h2>
+        <p class="text-lg text-white/70 max-w-xl mx-auto">Our team speaks Hindi & English. We are happy to help you!</p>
       </div>
-      <div class="contact-wrap">
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">📱</span>
+      <div class="grid md:grid-cols-2 gap-14 items-start">
+        <div class="flex flex-col gap-7">
+          <div class="flex items-start gap-4.5 bg-white/5 border border-white/10 rounded-2xl p-5.5 transition-all">
+            <span class="text-[34px] shrink-0">📱</span>
             <div>
-              <strong>Call or WhatsApp</strong>
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <strong class="block text-nk-gold text-base font-bold mb-1">Call or WhatsApp</strong>
+              <a href="tel:+919876543210" class="text-white/85 text-[17px] font-medium hover:text-nk-green-lt">+91 98765 43210</a>
             </div>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">📧</span>
+          <div class="flex items-start gap-4.5 bg-white/5 border border-white/10 rounded-2xl p-5.5 transition-all">
+            <span class="text-[34px] shrink-0">📧</span>
             <div>
-              <strong>Email Us</strong>
-              <a href="mailto:sales@nkengineering.in">sales@nkengineering.in</a>
+              <strong class="block text-nk-gold text-base font-bold mb-1">Email Us</strong>
+              <a href="mailto:sales@nkengineering.in" class="text-white/85 text-[17px] font-medium hover:text-nk-green-lt">sales@nkengineering.in</a>
             </div>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">🏠</span>
+          <div class="flex items-start gap-4.5 bg-white/5 border border-white/10 rounded-2xl p-5.5 transition-all">
+            <span class="text-[34px] shrink-0">🏠</span>
             <div>
-              <strong>Visit Our Office</strong>
-              <span>42, Industrial Area, Phase 2,<br />New Delhi – 110020</span>
+              <strong class="block text-nk-gold text-base font-bold mb-1">Visit Our Office</strong>
+              <span class="text-white/85 text-[17px] font-medium">42, Industrial Area, Phase 2,<br />New Delhi – 110020</span>
             </div>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon">🕐</span>
+          <div class="flex items-start gap-4.5 bg-white/5 border border-white/10 rounded-2xl p-5.5 transition-all">
+            <span class="text-[34px] shrink-0">🕐</span>
             <div>
-              <strong>Working Hours</strong>
-              <span>Mon – Sat: 9:00 AM to 6:00 PM</span>
+              <strong class="block text-nk-gold text-base font-bold mb-1">Working Hours</strong>
+              <span class="text-white/85 text-[17px] font-medium">Mon – Sat: 9:00 AM to 6:00 PM</span>
             </div>
           </div>
         </div>
-        <form class="contact-form" id="order-form" onsubmit="handleSubmit(event)">
-          <h3>Send an Enquiry</h3>
-          <div class="form-group">
-            <label for="name">Your Full Name</label>
-            <input type="text" id="name" placeholder="e.g. Ramesh Gupta" required />
+        <form class="bg-white rounded-2xl p-10 shadow-2xl" id="order-form" onsubmit="handleSubmit(event)">
+          <h3 class="text-2xl md:text-3xl font-extrabold text-nk-dark mb-7">Send an Enquiry</h3>
+          <div class="mb-5">
+            <label for="name" class="block text-base font-bold text-nk-dark mb-2">Your Full Name</label>
+            <input type="text" id="name" placeholder="e.g. Ramesh Gupta" class="w-full px-4.5 py-3.5 text-[17px] border-2 border-gray-200 rounded-lg outline-none focus:border-nk-green-lt bg-gray-50 focus:bg-white transition-all" required />
           </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="e.g. 98765 43210" required />
+          <div class="mb-5">
+            <label for="phone" class="block text-base font-bold text-nk-dark mb-2">Phone Number</label>
+            <input type="tel" id="phone" placeholder="e.g. 98765 43210" class="w-full px-4.5 py-3.5 text-[17px] border-2 border-gray-200 rounded-lg outline-none focus:border-nk-green-lt bg-gray-50 focus:bg-white transition-all" required />
           </div>
-          <div class="form-group">
-            <label for="city">Your City / State</label>
-            <input type="text" id="city" placeholder="e.g. Lucknow, UP" />
+          <div class="mb-5">
+            <label for="city" class="block text-base font-bold text-nk-dark mb-2">Your City / State</label>
+            <input type="text" id="city" placeholder="e.g. Lucknow, UP" class="w-full px-4.5 py-3.5 text-[17px] border-2 border-gray-200 rounded-lg outline-none focus:border-nk-green-lt bg-gray-50 focus:bg-white transition-all" />
           </div>
-          <div class="form-group">
-            <label for="message">Any Questions? (Optional)</label>
-            <textarea id="message" rows="3" placeholder="Write your question here..."></textarea>
+          <div class="mb-5">
+            <label for="message" class="block text-base font-bold text-nk-dark mb-2">Any Questions? (Optional)</label>
+            <textarea id="message" rows="3" placeholder="Write your question here..." class="w-full px-4.5 py-3.5 text-[17px] border-2 border-gray-200 rounded-lg outline-none focus:border-nk-green-lt bg-gray-50 focus:bg-white transition-all"></textarea>
           </div>
-          <button type="submit" class="btn-primary full-w" id="btn-submit">✅ Send Enquiry</button>
-          <div class="form-note">We will call you back within 24 hours.</div>
-          <div class="form-success" id="form-success" style="display:none;">
+          <button type="submit" class="w-full bg-gradient-to-br from-nk-green to-nk-green-lt text-white text-xl font-bold px-10 py-4 rounded-full shadow-lg shadow-nk-green/40 hover:-translate-y-1 transition-transform" id="btn-submit">✅ Send Enquiry</button>
+          <div class="text-center text-[15px] text-gray-500 mt-3.5">We will call you back within 24 hours.</div>
+          <div class="mt-4 bg-green-50 border border-nk-green-lt text-nk-green rounded-lg p-3.5 text-[17px] font-semibold text-center hidden" id="form-success">
             🎉 Thank you! We will contact you very soon.
           </div>
         </form>
@@ -289,24 +341,36 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-logo">🌿 NK Engineering & Works</div>
-      <p>© 2025 NK Engineering & Works India. All rights reserved.</p>
-      <p>Price: <strong>₹1,00,000</strong> per machine | Pan-India Delivery Available</p>
+  <footer class="bg-[#0a0a0a] py-9 text-center">
+    <div class="container mx-auto px-6 flex flex-col items-center gap-2.5">
+      <div class="text-[22px] font-extrabold text-nk-green-lt mb-1">🌿 NK Engineering & Works</div>
+      <p class="text-white/55 text-[15px]">© 2025 NK Engineering & Works India. All rights reserved.</p>
+      <p class="text-white/55 text-[15px]">Price: <strong class="text-nk-gold">₹1,00,000</strong> per machine | Pan-India Delivery Available</p>
     </div>
   </footer>
 
   <script>
     function handleSubmit(e) {
       e.preventDefault();
-      document.getElementById('order-form').style.opacity = '0.5';
+      const form = document.getElementById('order-form');
+      form.style.opacity = '0.5';
       setTimeout(() => {
-        document.getElementById('order-form').style.opacity = '1';
-        document.getElementById('form-success').style.display = 'block';
-        document.getElementById('order-form').reset();
+        form.style.opacity = '1';
+        document.getElementById('form-success').classList.remove('hidden');
+        form.reset();
       }, 800);
     }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
 
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -15,29 +15,32 @@ const specs = [
 
 export default function ProductSection() {
   return (
-    <section className="product-section" id="product">
-      <div className="container">
-        <div className="section-title">
-          <h2>NK Engineering Pro 5000</h2>
-          <p>A complete tobacco making solution designed for high output and long durability</p>
+    <section className="py-24 bg-nk-off-white" id="product">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-nk-dark mb-3">NK Engineering Pro 5000</h2>
+          <p className="text-lg text-gray-500 max-w-xl mx-auto">
+            A complete tobacco making solution designed for high output and long durability
+          </p>
         </div>
-        <div className="product-grid">
-          <div className="product-image-box">
-            <img src="/machine.png" alt="NK Engineering Pro 5000" />
-            <div className="price-badge">₹1,00,000</div>
+        <div className="grid md:grid-cols-2 gap-14 items-start">
+          <div className="relative bg-white rounded-2xl p-6 shadow-2xl">
+            <img src="/machine.png" alt="NK Engineering Pro 5000" className="rounded-xl w-full h-auto" />
           </div>
           <div className="product-info">
-            <h3>Machine Specifications</h3>
-            <table className="spec-table">
-              <tbody>
-                {specs.map(([label, value]) => (
-                  <tr key={label}>
-                    <td>{label}</td>
-                    <td>{value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <h3 className="text-2xl font-extrabold text-nk-dark mb-6">Machine Specifications</h3>
+            <div className="overflow-hidden border border-gray-200 rounded-xl bg-white shadow-sm">
+              <table className="w-full border-collapse">
+                <tbody>
+                  {specs.map(([label, value], i) => (
+                    <tr key={label} className="border-b border-gray-100 last:border-0 odd:bg-white even:bg-gray-50/50">
+                      <td className="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">{label}</td>
+                      <td className="p-3.5 text-gray-700">{value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

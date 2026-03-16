@@ -31,107 +31,90 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="contact-section" id="contact">
-      <div className="container">
-        <div className="section-title light">
-          <h2>📞 Contact Us to Order</h2>
-          <p>Our team speaks Hindi &amp; English. We are happy to help you!</p>
+    <section className="py-24 bg-gradient-to-br from-nk-dark to-nk-dark2" id="contact">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">📞 Contact Us to Order</h2>
+          <p className="text-lg text-white/70 max-w-xl mx-auto">Our team speaks Hindi & English. We are happy to help you!</p>
         </div>
-        <div className="contact-wrap">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Contact Info */}
-          <div className="contact-info">
-            <div className="contact-item">
-              <span className="contact-icon">📱</span>
-              <div>
-                <strong>Call or WhatsApp</strong>
-                <a href="tel:+919876543210">+91 98765 43210</a>
+          <div className="flex flex-col gap-6">
+            {[
+              { icon: '📱', strong: 'Call or WhatsApp', val: '+91 98765 43210', href: 'tel:+919876543210' },
+              { icon: '📧', strong: 'Email Us', val: 'sales@nkengineering.in', href: 'mailto:sales@nkengineering.in' },
+              { icon: '🏠', strong: 'Visit Our Office', val: '42, Industrial Area, Phase 2, New Delhi – 110020' },
+              { icon: '🕐', strong: 'Working Hours', val: 'Mon – Sat: 9:00 AM to 6:00 PM' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-5 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
+                <span className="text-4xl shrink-0">{item.icon}</span>
+                <div>
+                  <strong className="block text-nk-gold text-base font-bold mb-1">{item.strong}</strong>
+                  {item.href ? (
+                    <a href={item.href} className="text-white/85 text-[17px] font-medium hover:text-nk-green-lt transition-colors">{item.val}</a>
+                  ) : (
+                    <span className="text-white/85 text-[17px] font-medium leading-relaxed block">{item.val}</span>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="contact-item">
-              <span className="contact-icon">📧</span>
-              <div>
-                <strong>Email Us</strong>
-                <a href="mailto:sales@nkengineering.in">sales@nkengineering.in</a>
-              </div>
-            </div>
-            <div className="contact-item">
-              <span className="contact-icon">🏠</span>
-              <div>
-                <strong>Visit Our Office</strong>
-                <span>42, Industrial Area, Phase 2,<br />New Delhi – 110020</span>
-              </div>
-            </div>
-            <div className="contact-item">
-              <span className="contact-icon">🕐</span>
-              <div>
-                <strong>Working Hours</strong>
-                <span>Mon – Sat: 9:00 AM to 6:00 PM</span>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Enquiry Form */}
-          <form className="contact-form" id="order-form" onSubmit={handleSubmit}>
-            <h3>Send an Enquiry</h3>
+          <form className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl" id="order-form" onSubmit={handleSubmit}>
+            <h3 className="text-2xl font-extrabold text-nk-dark mb-8">Send an Enquiry</h3>
 
-            <div className="form-group">
-              <label htmlFor="name">Your Full Name</label>
-              <input
-                type="text" id="name"
-                placeholder="e.g. Ramesh Gupta"
-                value={form.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="tel" id="phone"
-                placeholder="e.g. 98765 43210"
-                value={form.phone}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="city">Your City / State</label>
-              <input
-                type="text" id="city"
-                placeholder="e.g. Lucknow, UP"
-                value={form.city}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Any Questions? (Optional)</label>
-              <textarea
-                id="message" rows="3"
-                placeholder="Write your question here..."
-                value={form.message}
-                onChange={handleChange}
-              />
-            </div>
-
-            <button
-              type="submit"
-              id="btn-submit"
-              className="btn-primary full-w"
-              disabled={status === 'loading'}
-            >
-              {status === 'loading' ? '⏳ Sending...' : '✅ Send Enquiry'}
-            </button>
-
-            <div className="form-note">We will call you back within 24 hours.</div>
-
-            {status === 'success' && (
-              <div className="form-success">
-                🎉 Thank you! We will contact you very soon.
+            <div className="space-y-5">
+              {[
+                { id: 'name', label: 'Your Full Name', type: 'text', placeholder: 'e.g. Ramesh Gupta', req: true },
+                { id: 'phone', label: 'Phone Number', type: 'tel', placeholder: 'e.g. 98765 43210', req: true },
+                { id: 'city', label: 'Your City / State', type: 'text', placeholder: 'e.g. Lucknow, UP' },
+              ].map((field) => (
+                <div key={field.id}>
+                  <label htmlFor={field.id} className="block text-base font-bold text-nk-dark mb-2">{field.label}</label>
+                  <input
+                    type={field.type} id={field.id}
+                    placeholder={field.placeholder}
+                    value={form[field.id]}
+                    onChange={handleChange}
+                    required={field.req}
+                    className="w-full px-5 py-3.5 text-[17px] border-2 border-gray-100 rounded-xl outline-none focus:border-nk-green-lt bg-gray-50 transition-all font-medium"
+                  />
+                </div>
+              ))}
+              <div>
+                <label htmlFor="message" className="block text-base font-bold text-nk-dark mb-2">Any Questions? (Optional)</label>
+                <textarea
+                  id="message" rows="3"
+                  placeholder="Write your question here..."
+                  value={form.message}
+                  onChange={handleChange}
+                  className="w-full px-5 py-3.5 text-[17px] border-2 border-gray-100 rounded-xl outline-none focus:border-nk-green-lt bg-gray-50 transition-all font-medium resize-none"
+                />
               </div>
-            )}
-            {status === 'error' && (
-              <div className="form-error">❌ {errMsg}</div>
-            )}
+
+              <button
+                type="submit"
+                id="btn-submit"
+                disabled={status === 'loading'}
+                className="w-full bg-gradient-to-br from-nk-green to-nk-green-lt text-white text-xl font-bold py-4 rounded-xl shadow-lg shadow-nk-green/30 hover:-translate-y-0.5 transition-all active:scale-95 disabled:opacity-70 disabled:grayscale"
+              >
+                {status === 'loading' ? '⏳ Sending...' : '✅ Send Enquiry'}
+              </button>
+
+              <div className="text-center text-sm text-gray-400 font-medium">We will call you back within 24 hours.</div>
+
+              {status === 'success' && (
+                <div className="mt-4 bg-green-50 border border-nk-green-lt text-nk-green rounded-xl p-4 font-bold text-center">
+                  🎉 Thank you! We will contact you very soon.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="mt-4 bg-red-50 border border-red-400 text-red-600 rounded-xl p-4 font-bold text-center">
+                  ❌ {errMsg}
+                </div>
+              )}
+            </div>
           </form>
         </div>
       </div>
