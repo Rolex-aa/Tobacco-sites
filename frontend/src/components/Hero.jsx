@@ -8,11 +8,11 @@ export default function Hero() {
     <section className="relative bg-[#0f2027] overflow-hidden min-h-[80vh] flex items-center" id="hero">
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_70%_50%,rgba(46,125,50,0.18)_0%,transparent_70%)]"></div>
       <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div className="max-w-xl text-left">
+        <div className="md:w-5/12 text-left">
           <span className="inline-block bg-nk-gold/20 border border-nk-gold text-nk-gold text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
             ✅ Trusted by 500+ Businesses
           </span>
-          <h1 className="text-white text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+          <h1 className="text-white text-4xl md:text-7xl font-extrabold leading-tight mb-6">
             India's Best<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-nk-green-lt to-nk-gold">
               Tobacco Making Machine
@@ -38,8 +38,8 @@ export default function Hero() {
             </button>
           </div>
         </div>
-        <div className="relative w-full md:w-1/2 flex justify-center md:justify-end animate-bounce-subtle">
-          <img src="/machine.png" alt="NK Engineering Pro 5000 Machine" className="max-w-full h-auto drop-shadow-2xl" />
+        <div className="relative w-full md:w-7/12 flex justify-center md:justify-end">
+          <img src="/nk-banner.jpg" alt="NK Engineering World Presence" className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl border border-white/10 transform transition-all duration-700 hover:scale-[1.02]" />
         </div>
       </div>
     </section>
