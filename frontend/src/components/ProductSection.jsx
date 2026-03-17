@@ -15,16 +15,16 @@ const specifications = [
 
 export default function ProductSection() {
   return (
-    <section className="py-24 bg-nk-dark text-white overflow-hidden" id="product">
+    <section className="py-24 bg-nk-dark text-nk-text overflow-hidden transition-colors duration-300" id="product">
       <div className="container mx-auto px-6 relative">
         {/* Decorative background glow */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-nk-gold/10 rounded-full blur-[120px] pointer-events-none opacity-50"></div>
         
         <div className="text-center mb-16 relative">
           <span className="text-nk-gold font-bold tracking-widest uppercase text-sm mb-3 block">Premium Machinery</span>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">NK Engineering <span className="text-nk-gold">Pro 5000</span></h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-4 transition-colors duration-300">NK Engineering <span className="text-nk-gold">Pro 5000</span></h2>
           <div className="w-24 h-1.5 bg-nk-gold mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-nk-text-subtle max-w-2xl mx-auto text-lg leading-relaxed transition-colors duration-300">
             The industry standard for high-speed tobacco manufacturing. Engineered for maximum efficiency, 
             zero maintenance, and long-term durability.
           </p>
@@ -34,7 +34,7 @@ export default function ProductSection() {
           {/* Left: Machine Showcase */}
           <div className="lg:w-1/2 relative group">
             <div className="absolute -inset-4 bg-gradient-to-tr from-nk-gold/20 to-transparent rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative bg-white/5 border border-white/10 p-4 rounded-[40px] shadow-2xl overflow-hidden group-hover:border-nk-gold/30 transition-colors">
+            <div className="relative bg-nk-card border border-nk-border p-4 rounded-[40px] shadow-2xl overflow-hidden group-hover:border-nk-gold/30 transition-all duration-300">
               <div className="absolute top-0 right-0 p-8">
                 <span className="bg-nk-gold text-nk-dark text-xs font-black px-3 py-1 rounded-full uppercase tracking-tighter">Bestseller</span>
               </div>
@@ -48,7 +48,7 @@ export default function ProductSection() {
 
           {/* Right: Modern Specs Grid */}
           <div className="lg:w-1/2">
-            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 transition-colors duration-300">
               <span className="w-8 h-1 bg-nk-gold rounded-full"></span>
               Technical Specifications
             </h3>
@@ -56,19 +56,19 @@ export default function ProductSection() {
               {specifications.map((spec) => (
                 <div 
                   key={spec.label} 
-                  className="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 hover:border-nk-gold/30 transition-all hover:-translate-y-1 group"
+                  className="bg-nk-card border border-nk-border p-5 rounded-2xl hover:bg-nk-bg-accent hover:border-nk-gold/30 transition-all hover:-translate-y-1 group"
                 >
                   <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{spec.icon}</div>
-                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">{spec.label}</p>
-                  <p className="text-sm md:text-md font-bold text-white leading-tight">{spec.value}</p>
+                  <p className="text-xs text-nk-text-subtle font-bold uppercase tracking-wider mb-1 transition-colors duration-300">{spec.label}</p>
+                  <p className="text-sm md:text-md font-bold text-nk-text leading-tight transition-colors duration-300">{spec.value}</p>
                 </div>
               ))}
             </div>
             
-            <div className="mt-10 p-6 bg-nk-gold/10 border border-nk-gold/20 rounded-3xl flex items-center justify-between gap-6 flex-wrap md:flex-nowrap">
+            <div className="mt-10 p-6 bg-nk-gold/10 border border-nk-gold/20 rounded-3xl flex items-center justify-between gap-6 flex-wrap md:flex-nowrap transition-colors duration-300">
               <div>
                 <p className="text-nk-gold font-black text-xl mb-1">Starting from ₹1,00,000</p>
-                <p className="text-gray-400 text-xs font-bold uppercase">Incl. GST & Pan-India Shipping</p>
+                <p className="text-nk-text-subtle text-xs font-bold uppercase transition-colors duration-300">Incl. GST & Pan-India Shipping</p>
               </div>
               <button className="bg-nk-gold text-nk-dark font-black px-8 py-4 rounded-xl hover:bg-yellow-400 transition-all shadow-xl shadow-nk-gold/10 active:scale-95 whitespace-nowrap">
                 📥 Download Brochure

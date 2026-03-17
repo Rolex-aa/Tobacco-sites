@@ -22,14 +22,14 @@ export default function Hero() {
               <span className="text-white/80 text-sm font-bold tracking-widest uppercase">Now Shipping Across India</span>
             </div>
             
-            <h1 className="text-white text-5xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter">
+            <h1 className="text-nk-text text-5xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter transition-colors duration-300">
               The Gold Standard of <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-nk-gold via-yellow-400 to-nk-gold bg-[length:200%_auto] animate-gradient">
                 Tobacco Machinery.
               </span>
             </h1>
             
-            <p className="text-gray-400 text-lg md:text-2xl mb-12 leading-relaxed max-w-xl font-medium">
+            <p className="text-nk-text-subtle text-lg md:text-2xl mb-12 leading-relaxed max-w-xl font-medium transition-colors duration-300">
               Join 500+ successful operators. Powerful, reliable, and engineered for 24/7 industrial production.
             </p>
             
@@ -44,7 +44,7 @@ export default function Hero() {
               </button>
               <button
                 id="btn-details"
-                className="text-white text-xl font-bold px-10 py-5 rounded-2xl border-2 border-white/10 hover:bg-white/10 transition-all active:scale-95 flex items-center gap-2"
+                className="text-nk-text text-xl font-bold px-10 py-5 rounded-2xl border-2 border-nk-border hover:bg-nk-card transition-all active:scale-95 flex items-center gap-2"
                 onClick={() => scrollTo('product')}
               >
                 Explore Machine Details

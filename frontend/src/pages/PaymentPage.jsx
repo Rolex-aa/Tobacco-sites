@@ -21,14 +21,15 @@ export default function PaymentPage({ cart, userData, clearCart }) {
 
   if (orderPlaced) {
     return (
-      <div className="min-h-screen bg-nk-dark text-white flex items-center justify-center p-6 text-center">
-        <div className="max-w-md bg-white/5 p-12 rounded-3xl border border-nk-gold/30 shadow-2xl">
+      <div className="min-h-screen bg-nk-dark text-nk-text flex items-center justify-center p-6 text-center transition-colors duration-300">
+        <div className="max-w-md bg-nk-bg-subtle p-12 rounded-[3rem] border border-nk-gold/30 shadow-2xl transition-colors duration-300">
+
           <div className="w-24 h-24 bg-nk-gold/20 rounded-full flex items-center justify-center text-5xl text-nk-gold mx-auto mb-8 animate-bounce">
             ✅
           </div>
-          <h1 className="text-4xl font-extrabold mb-4">Order Placed!</h1>
-          <p className="text-gray-400 mb-10 text-lg leading-relaxed">
-            Thank you, <span className="text-white font-bold">{userData.name}</span>! Your order for {cart.length === 0 ? 'the machines' : ''} has been successfully placed. We will contact you at <span className="text-white font-bold">{userData.phone}</span> for delivery tracking.
+          <h1 className="text-4xl font-black mb-4 transition-colors duration-300">Order Placed!</h1>
+          <p className="text-nk-text-subtle mb-10 text-lg leading-relaxed font-medium transition-colors duration-300">
+            Thank you, <span className="text-nk-text font-black">{userData.name}</span>! Your order has been successfully placed. We will contact you at <span className="text-nk-gold font-black">{userData.phone}</span> for delivery tracking.
           </p>
           <button 
             onClick={() => navigate('/')}
@@ -42,19 +43,20 @@ export default function PaymentPage({ cart, userData, clearCart }) {
   }
 
   return (
-    <div className="min-h-screen bg-nk-dark text-white py-12">
+    <div className="min-h-screen bg-nk-dark text-nk-text py-12 transition-colors duration-300">
       <div className="container mx-auto px-6 max-w-3xl">
-        <h1 className="text-4xl font-extrabold mb-10 text-center">Select <span className="text-nk-gold">Payment Mode</span></h1>
+        <h1 className="text-4xl font-black mb-10 text-center transition-colors duration-300">Select <span className="text-nk-gold">Payment Mode</span></h1>
+
         
-        <div className="bg-white/5 p-8 rounded-2xl border border-white/10 shadow-xl space-y-6">
-          <div className="pb-6 border-b border-white/10 mb-6">
-            <p className="text-gray-400 mb-1">Total Amount Payable</p>
-            <h2 className="text-4xl font-black text-nk-gold">₹{total.toLocaleString('en-IN')}</h2>
+        <div className="bg-nk-card p-10 rounded-[2.5rem] border border-nk-border shadow-2xl transition-colors duration-300 space-y-8">
+          <div className="pb-8 border-b border-nk-border mb-8 transition-colors duration-300">
+            <p className="text-nk-text-subtle font-bold mb-1 uppercase tracking-widest text-xs transition-colors duration-300">Total Amount Payable</p>
+            <h2 className="text-5xl font-black text-nk-gold tracking-tighter">₹{total.toLocaleString('en-IN')}</h2>
           </div>
 
           <div className="space-y-4">
             {/* UPI */}
-            <label className={`flex items-center gap-4 p-5 rounded-xl border-2 cursor-pointer transition-all ${paymentMode === 'upi' ? 'border-nk-gold bg-nk-gold/5 shadow-inner shadow-nk-gold/10' : 'border-white/10 hover:border-white/30'}`}>
+            <label className={`flex items-center gap-5 p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${paymentMode === 'upi' ? 'border-nk-gold bg-nk-gold/5 shadow-inner' : 'border-nk-border bg-nk-bg-subtle hover:border-nk-gold/50'}`}>
               <input 
                 type="radio" 
                 name="payment" 
@@ -62,18 +64,18 @@ export default function PaymentPage({ cart, userData, clearCart }) {
                 checked={paymentMode === 'upi'} 
                 onChange={() => setPaymentMode('upi')}
               />
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${paymentMode === 'upi' ? 'border-nk-gold' : 'border-gray-500'}`}>
-                {paymentMode === 'upi' && <div className="w-3 h-3 bg-nk-gold rounded-full"></div>}
+              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${paymentMode === 'upi' ? 'border-nk-gold' : 'border-nk-text-subtle'}`}>
+                {paymentMode === 'upi' && <div className="w-3 h-3 bg-nk-gold rounded-full transition-all"></div>}
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-lg">UPI / QR Code</h3>
-                <p className="text-xs text-gray-500">Pay using GPay, PhonePe, or Paytm</p>
+                <h3 className={`font-black text-lg transition-colors ${paymentMode === 'upi' ? 'text-nk-gold' : 'text-nk-text'}`}>UPI / QR Code</h3>
+                <p className="text-[13px] text-nk-text-subtle font-bold transition-colors">Pay using GPay, PhonePe, or Paytm</p>
               </div>
-              <div className="text-2xl">📱</div>
+              <div className="text-3xl filter grayscale group-hover:grayscale-0 transition-all">📱</div>
             </label>
 
             {/* Bank Transfer */}
-            <label className={`flex items-center gap-4 p-5 rounded-xl border-2 cursor-pointer transition-all ${paymentMode === 'bank' ? 'border-nk-gold bg-nk-gold/5 shadow-inner shadow-nk-gold/10' : 'border-white/10 hover:border-white/30'}`}>
+            <label className={`flex items-center gap-5 p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${paymentMode === 'bank' ? 'border-nk-gold bg-nk-gold/5 shadow-inner' : 'border-nk-border bg-nk-bg-subtle hover:border-nk-gold/50'}`}>
               <input 
                 type="radio" 
                 name="payment" 
@@ -81,18 +83,18 @@ export default function PaymentPage({ cart, userData, clearCart }) {
                 checked={paymentMode === 'bank'} 
                 onChange={() => setPaymentMode('bank')}
               />
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${paymentMode === 'bank' ? 'border-nk-gold' : 'border-gray-500'}`}>
-                {paymentMode === 'bank' && <div className="w-3 h-3 bg-nk-gold rounded-full"></div>}
+              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${paymentMode === 'bank' ? 'border-nk-gold' : 'border-nk-text-subtle'}`}>
+                {paymentMode === 'bank' && <div className="w-3 h-3 bg-nk-gold rounded-full transition-all"></div>}
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-lg">Direct Bank Transfer</h3>
-                <p className="text-xs text-gray-500">Net Banking / RTGS / NEFT</p>
+                <h3 className={`font-black text-lg transition-colors ${paymentMode === 'bank' ? 'text-nk-gold' : 'text-nk-text'}`}>Direct Bank Transfer</h3>
+                <p className="text-[13px] text-nk-text-subtle font-bold transition-colors">Net Banking / RTGS / NEFT</p>
               </div>
-              <div className="text-2xl">🏦</div>
+              <div className="text-3xl">🏦</div>
             </label>
 
             {/* COD */}
-            <label className={`flex items-center gap-4 p-5 rounded-xl border-2 cursor-pointer transition-all ${paymentMode === 'cod' ? 'border-nk-gold bg-nk-gold/5 shadow-inner shadow-nk-gold/10' : 'border-white/10 hover:border-white/30'}`}>
+            <label className={`flex items-center gap-5 p-6 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${paymentMode === 'cod' ? 'border-nk-gold bg-nk-gold/5 shadow-inner' : 'border-nk-border bg-nk-bg-subtle hover:border-nk-gold/50'}`}>
               <input 
                 type="radio" 
                 name="payment" 
@@ -100,14 +102,14 @@ export default function PaymentPage({ cart, userData, clearCart }) {
                 checked={paymentMode === 'cod'} 
                 onChange={() => setPaymentMode('cod')}
               />
-              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${paymentMode === 'cod' ? 'border-nk-gold' : 'border-gray-500'}`}>
-                {paymentMode === 'cod' && <div className="w-3 h-3 bg-nk-gold rounded-full"></div>}
+              <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${paymentMode === 'cod' ? 'border-nk-gold' : 'border-nk-text-subtle'}`}>
+                {paymentMode === 'cod' && <div className="w-3 h-3 bg-nk-gold rounded-full transition-all"></div>}
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-lg">Cash on Delivery</h3>
-                <p className="text-xs text-gray-500">Pay at the time of delivery</p>
+                <h3 className={`font-black text-lg transition-colors ${paymentMode === 'cod' ? 'text-nk-gold' : 'text-nk-text'}`}>Cash on Delivery</h3>
+                <p className="text-[13px] text-nk-text-subtle font-bold transition-colors">Pay at the time of delivery</p>
               </div>
-              <div className="text-2xl">🚚</div>
+              <div className="text-3xl">🚚</div>
             </label>
           </div>
 

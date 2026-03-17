@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-nk-green: #2e7d32;
-  --color-nk-green-lt: #4caf50;
-  --color-nk-gold: #f59e0b;
-  --color-nk-dark: #1a1a2e;
-  --color-nk-dark2: #16213e;
-  --color-nk-off-white: #f5f5f0;
+  --color-nk-green: var(--nk-green);
+  --color-nk-green-lt: var(--nk-green-lt);
+  --color-nk-gold: var(--nk-gold);
+  --color-nk-dark: var(--nk-bg);
+  --color-nk-dark2: var(--nk-bg-accent);
+  --color-nk-off-white: var(--nk-bg-subtle);
+  --color-nk-text: var(--nk-text);
+  --color-nk-text-subtle: var(--nk-text-subtle);
 
   --animate-bounce-subtle: bounce-subtle 3s ease-in-out infinite;
 
@@ -14,6 +16,31 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
+}
+
+:root {
+  --nk-green: #2e7d32;
+  --nk-green-lt: #4caf50;
+  --nk-gold: #f59e0b;
+  
+  /* Dark Mode (Default) */
+  --nk-bg: #1a1a2e;
+  --nk-bg-accent: #16213e;
+  --nk-bg-subtle: #121225;
+  --nk-text: #ffffff;
+  --nk-text-subtle: #9ca3af;
+  --nk-card: rgba(255, 255, 255, 0.05);
+  --nk-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] {
+  --nk-bg: #f8f9fa;
+  --nk-bg-accent: #ffffff;
+  --nk-bg-subtle: #f1f3f5;
+  --nk-text: #1a1a2e;
+  --nk-text-subtle: #6b7280;
+  --nk-card: #ffffff;
+  --nk-border: rgba(0, 0, 0, 0.1);
 }
 
 :root {
@@ -26,12 +53,16 @@ html {
 
 body {
   font-family: var(--font);
-  @apply bg-nk-off-white text-gray-900 text-lg leading-relaxed;
+  @apply bg-nk-dark text-nk-text text-lg leading-relaxed transition-colors duration-300;
 }
 
 /* Custom transitions and glassmorphism helpers */
 .glass {
   @apply backdrop-blur-md bg-white/5 border border-white/10;
+}
+
+[data-theme='light'] .glass {
+  @apply bg-black/5 border-black/10;
 }
 
 .btn-transition {

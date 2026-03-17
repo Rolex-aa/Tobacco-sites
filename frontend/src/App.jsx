@@ -19,6 +19,14 @@ export default function App() {
   const [userData, setUserData] = useState({
     name: '', phone: '', address: '', city: '', state: '', pincode: ''
   });
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
+
 
   const addToCart = (product) => {
     setCart(prev => {
@@ -44,7 +52,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar cart={cart} updateQuantity={updateQuantity} />
+      <Navbar cart={cart} updateQuantity={updateQuantity} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <Routes>
         <Route path="/" element={
           <>
