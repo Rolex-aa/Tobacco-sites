@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const products = [
-  { id: 1, img: '/products/p1.jpg', name: 'NK Pro Series' },
-  { id: 2, img: '/products/p2.jpg', name: 'Precision Tobacco Maker' },
-  { id: 3, img: '/products/p3.jpg', name: 'High Efficiency Cutter' },
-  { id: 4, img: '/products/p4.jpg', name: 'Industrial Grade Machine' },
-  { id: 5, img: '/products/p5.jpg', name: 'Compact Tobacco Solution' },
+  { id: 1, img: '/machine/1.jpeg', name: 'NK Pro Series' },
+  { id: 2, img: '/machine/2.jpeg', name: 'Precision Tobacco Maker' },
+  { id: 3, img: '/machine/3.jpeg', name: 'High Efficiency Cutter' },
+  { id: 4, img: '/machine/4.jpeg', name: 'Industrial Grade Machine' },
+  { id: 5, img: '/machine/5.jpeg', name: 'Compact Tobacco Solution' },
 ];
 
 export default function ProductSlider() {

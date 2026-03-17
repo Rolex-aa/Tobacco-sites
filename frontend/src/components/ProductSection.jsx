@@ -25,7 +25,7 @@ export default function ProductSection() {
         </div>
         <div className="grid md:grid-cols-2 gap-14 items-start">
           <div className="relative bg-white rounded-2xl p-6 shadow-2xl">
-            <img src="/machine.png" alt="NK Engineering Pro 5000" className="rounded-xl w-full h-auto" />
+            <img src="/machine/1.jpeg" alt="NK Engineering Pro 5000" className="rounded-xl w-full h-auto" />
           </div>
           <div className="product-info">
             <h3 className="text-2xl font-extrabold text-nk-dark mb-6">Machine Specifications</h3>
