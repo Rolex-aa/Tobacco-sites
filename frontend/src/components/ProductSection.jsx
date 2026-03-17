@@ -1,45 +1,78 @@
 import React from 'react';
 
-const specs = [
-  ['🏷️ Model',         'NK Engineering Pro 5000'],
-  ['⚡ Motor Power',    '3 HP – Heavy Duty'],
-  ['🔢 Output Capacity','5,000 cigarettes / hour'],
-  ['⚙️ Machine Weight', '180 kg'],
-  ['📐 Dimensions',     '120 × 80 × 110 cm'],
-  ['🔌 Power Supply',   '220V / 50Hz, Single Phase'],
-  ['🌡️ Operating Temp', '10°C – 45°C'],
-  ['🔧 Material',       'Food-Grade Stainless Steel'],
-  ['📦 Warranty',       '1 Year Full Warranty'],
-  ['🚚 Delivery',       'Pan-India Free Delivery'],
+const specifications = [
+  { label: 'Model', value: 'NK Pro 5000', icon: '🏷️' },
+  { label: 'Motor Power', value: '3 HP – Heavy Duty', icon: '⚡' },
+  { label: 'Output', value: '5,000 cigarettes/hr', icon: '🔢' },
+  { label: 'Weight', value: '180 kg', icon: '⚙️' },
+  { label: 'Dimensions', value: '120 × 80 × 110 cm', icon: '📐' },
+  { label: 'Power', value: '220V, Single Phase', icon: '🔌' },
+  { label: 'Operating Temp', value: '10°C – 45°C', icon: '🌡️' },
+  { label: 'Material', value: 'SS 304 Food-Grade', icon: '🔧' },
+  { label: 'Warranty', value: '1 Year Full', icon: '📦' },
+  { label: 'Delivery', value: 'Free (Pan-India)', icon: '🚚' },
 ];
 
 export default function ProductSection() {
   return (
-    <section className="py-24 bg-nk-off-white" id="product">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-nk-dark mb-3">NK Engineering Pro 5000</h2>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
-            A complete tobacco making solution designed for high output and long durability
+    <section className="py-24 bg-nk-dark text-white overflow-hidden" id="product">
+      <div className="container mx-auto px-6 relative">
+        {/* Decorative background glow */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-nk-gold/10 rounded-full blur-[120px] pointer-events-none opacity-50"></div>
+        
+        <div className="text-center mb-16 relative">
+          <span className="text-nk-gold font-bold tracking-widest uppercase text-sm mb-3 block">Premium Machinery</span>
+          <h2 className="text-4xl md:text-5xl font-black mb-4">NK Engineering <span className="text-nk-gold">Pro 5000</span></h2>
+          <div className="w-24 h-1.5 bg-nk-gold mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            The industry standard for high-speed tobacco manufacturing. Engineered for maximum efficiency, 
+            zero maintenance, and long-term durability.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-14 items-start">
-          <div className="relative bg-white rounded-2xl p-6 shadow-2xl">
-            <img src="/machine/1.jpeg" alt="NK Engineering Pro 5000" className="rounded-xl w-full h-auto" />
+
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          {/* Left: Machine Showcase */}
+          <div className="lg:w-1/2 relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-nk-gold/20 to-transparent rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="relative bg-white/5 border border-white/10 p-4 rounded-[40px] shadow-2xl overflow-hidden group-hover:border-nk-gold/30 transition-colors">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="bg-nk-gold text-nk-dark text-xs font-black px-3 py-1 rounded-full uppercase tracking-tighter">Bestseller</span>
+              </div>
+              <img 
+                src="/machine/1.jpeg" 
+                alt="NK Engineering Pro 5000" 
+                className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform hover:scale-105 transition-transform duration-700" 
+              />
+            </div>
           </div>
-          <div className="product-info">
-            <h3 className="text-2xl font-extrabold text-nk-dark mb-6">Machine Specifications</h3>
-            <div className="overflow-hidden border border-gray-200 rounded-xl bg-white shadow-sm">
-              <table className="w-full border-collapse">
-                <tbody>
-                  {specs.map(([label, value], i) => (
-                    <tr key={label} className="border-b border-gray-100 last:border-0 odd:bg-white even:bg-gray-50/50">
-                      <td className="p-3.5 pl-6 font-bold text-nk-dark w-[42%] whitespace-nowrap">{label}</td>
-                      <td className="p-3.5 text-gray-700">{value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+
+          {/* Right: Modern Specs Grid */}
+          <div className="lg:w-1/2">
+            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+              <span className="w-8 h-1 bg-nk-gold rounded-full"></span>
+              Technical Specifications
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {specifications.map((spec) => (
+                <div 
+                  key={spec.label} 
+                  className="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 hover:border-nk-gold/30 transition-all hover:-translate-y-1 group"
+                >
+                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{spec.icon}</div>
+                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">{spec.label}</p>
+                  <p className="text-sm md:text-md font-bold text-white leading-tight">{spec.value}</p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-10 p-6 bg-nk-gold/10 border border-nk-gold/20 rounded-3xl flex items-center justify-between gap-6 flex-wrap md:flex-nowrap">
+              <div>
+                <p className="text-nk-gold font-black text-xl mb-1">Starting from ₹1,00,000</p>
+                <p className="text-gray-400 text-xs font-bold uppercase">Incl. GST & Pan-India Shipping</p>
+              </div>
+              <button className="bg-nk-gold text-nk-dark font-black px-8 py-4 rounded-xl hover:bg-yellow-400 transition-all shadow-xl shadow-nk-gold/10 active:scale-95 whitespace-nowrap">
+                📥 Download Brochure
+              </button>
             </div>
           </div>
         </div>

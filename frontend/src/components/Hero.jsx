@@ -5,41 +5,65 @@ export default function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section className="relative bg-[#0f2027] overflow-hidden min-h-[80vh] flex items-center" id="hero">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_70%_50%,rgba(46,125,50,0.18)_0%,transparent_70%)]"></div>
-      <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div className="md:w-5/12 text-left">
-          <span className="inline-block bg-nk-gold/20 border border-nk-gold text-nk-gold text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
-            ✅ Trusted by 500+ Businesses
-          </span>
-          <h1 className="text-white text-4xl md:text-7xl font-extrabold leading-tight mb-6">
-            India's Best<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-nk-green-lt to-nk-gold">
-              Tobacco Making Machine
-            </span>
-          </h1>
-          <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
-            Powerful. Reliable. Easy to Operate. Built for your success.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <button
-              id="btn-order"
-              className="bg-gradient-to-br from-nk-green to-nk-green-lt text-white text-xl font-bold px-10 py-4 rounded-full shadow-lg shadow-nk-green/40 hover:-translate-y-1 transition-transform active:scale-95"
-              onClick={() => scrollTo('contact')}
-            >
-              🛒 Order Now
-            </button>
-            <button
-              id="btn-details"
-              className="bg-white/10 text-white text-xl font-semibold px-9 py-4 rounded-full border-2 border-white/40 backdrop-blur-md hover:bg-white/20 hover:-translate-y-1 transition-all active:scale-95"
-              onClick={() => scrollTo('product')}
-            >
-              See Details ↓
-            </button>
+    <section className="relative bg-nk-dark overflow-hidden min-h-screen flex items-center" id="hero">
+      {/* Dynamic Background Effects */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-nk-green/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-nk-gold/10 rounded-full blur-[100px]"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 contrast-150 brightness-100 mix-blend-overlay"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-20">
+          
+          <div className="lg:w-1/2 text-left">
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-md px-5 py-2.5 rounded-full mb-8 hover:bg-white/10 transition-colors group cursor-default">
+              <span className="flex h-3 w-3 shrink-0 rounded-full bg-nk-gold animate-ping"></span>
+              <span className="text-white/80 text-sm font-bold tracking-widest uppercase">Now Shipping Across India</span>
+            </div>
+            
+            <h1 className="text-white text-5xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter">
+              The Gold Standard of <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nk-gold via-yellow-400 to-nk-gold bg-[length:200%_auto] animate-gradient">
+                Tobacco Machinery.
+              </span>
+            </h1>
+            
+            <p className="text-gray-400 text-lg md:text-2xl mb-12 leading-relaxed max-w-xl font-medium">
+              Join 500+ successful operators. Powerful, reliable, and engineered for 24/7 industrial production.
+            </p>
+            
+            <div className="flex flex-wrap gap-6 items-center">
+              <button
+                id="btn-order"
+                className="group bg-nk-gold text-nk-dark text-xl font-black px-12 py-5 rounded-2xl shadow-2xl shadow-nk-gold/20 hover:bg-yellow-400 transition-all active:scale-95 flex items-center gap-3"
+                onClick={() => scrollTo('contact')}
+              >
+                <span>🛒 Direct Factory Order</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+              <button
+                id="btn-details"
+                className="text-white text-xl font-bold px-10 py-5 rounded-2xl border-2 border-white/10 hover:bg-white/10 transition-all active:scale-95 flex items-center gap-2"
+                onClick={() => scrollTo('product')}
+              >
+                Explore Machine Details
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="relative w-full md:w-7/12 flex justify-center md:justify-end">
-          <img src="/nk-banner.jpg" alt="NK Engineering World Presence" className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-2xl border border-white/10 transform transition-all duration-700 hover:scale-[1.02]" />
+
+          <div className="lg:w-1/2 relative">
+            <div className="absolute inset-0 bg-nk-gold/20 rounded-full blur-[100px] scale-75 opacity-20 pointer-events-none"></div>
+            <div className="relative z-10 group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-nk-gold to-nk-green blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+              <img 
+                src="/nk-banner.jpg" 
+                alt="NK Engineering Heavy Duty Machinery" 
+                className="relative w-full h-auto rounded-[3rem] shadow-2xl border border-white/5 transform transition-all duration-1000 hover:scale-[1.01] hover:-rotate-1" 
+              />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
