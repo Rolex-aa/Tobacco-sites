@@ -49,8 +49,11 @@ export default function RepairingSection() {
             <h3 className="text-2xl md:text-3xl font-bold mb-2">Need immediate technical help?</h3>
             <p className="text-gray-400">Our support team is available 24/7 for you.</p>
           </div>
-          <button className="relative z-10 bg-nk-green hover:bg-nk-green-lt text-white font-black px-10 py-5 rounded-2xl transition-all shadow-xl shadow-nk-green/20 hover:scale-105 active:scale-95">
-            💬 Chat with Technician
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="relative z-10 bg-nk-green hover:bg-nk-green-lt text-white font-black px-10 py-5 rounded-2xl transition-all shadow-xl shadow-nk-green/20 hover:scale-105 active:scale-95 flex items-center gap-3"
+          >
+            <span className="text-2xl">📞</span> Call Senior Technician
           </button>
         </div>
       </div>
