@@ -30,6 +30,7 @@ export default function Navbar({ cart, updateQuantity, isDarkMode, toggleDarkMod
           <button onClick={() => handleScroll('hero')} className="text-nk-text/80 text-[17px] font-bold hover:text-nk-gold transition-colors">Home</button>
           <Link to="/machine" className="text-nk-text/80 text-[17px] font-bold hover:text-nk-gold transition-colors">Machine</Link>
           <Link to="/parts" className="text-nk-text/80 text-[17px] font-bold hover:text-nk-gold transition-colors">Parts</Link>
+          <Link to="/admin/login" className="text-nk-text/80 text-[17px] font-bold hover:text-nk-gold transition-colors">Admin</Link>
           <button onClick={() => handleScroll('repairing')} className="text-nk-text/80 text-[17px] font-bold hover:text-nk-gold transition-colors">Service</button>
           
           {/* Theme Toggle */}

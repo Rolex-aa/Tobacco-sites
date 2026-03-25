@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function PartsPage({ addToCart }) {
-  const parts = [
-    { id: 103, name: 'Internal Timing Gear', image: '/parts/3.jpg', price: 3800, description: 'Durable gear set for synchronized material feeding and processing.' },
-    { id: 104, name: 'Main Drive Assembly', image: '/parts/4.jpg', price: 9500, description: 'Complete drive unit for specialized tobacco manufacturing models.' },
-  ];
+  const [parts, setParts] = useState([]);
+
+  useEffect(() => {
+    const fetchParts = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:5001/api/products?category=parts');
+        setParts(data.data);
+      } catch (err) {
+        console.error('Fetch error:', err);
+      }
+    };
+    fetchParts();
+  }, []);
 
   return (
     <div className="min-h-screen bg-nk-dark text-nk-text py-12 transition-colors duration-300">
@@ -33,7 +43,7 @@ export default function PartsPage({ addToCart }) {
               {/* Part Image */}
               <div className="bg-white p-6 h-64 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-nk-gold/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <img src={part.image} alt={part.name} className="max-w-full max-h-full object-contain drop-shadow-2xl transform hover:scale-110 transition-transform duration-500" />
+                <img src={`http://localhost:5001${part.image}`} alt={part.name} className="max-w-full max-h-full object-contain drop-shadow-2xl transform hover:scale-110 transition-transform duration-500" />
               </div>
 
               {/* Part Details */}

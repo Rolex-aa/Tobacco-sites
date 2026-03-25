@@ -13,6 +13,8 @@ import MachinePage     from './pages/MachinePage';
 import PartsPage       from './pages/PartsPage';
 import CheckoutPage    from './pages/CheckoutPage';
 import PaymentPage     from './pages/PaymentPage';
+import AdminLogin      from './pages/AdminLogin';
+import AdminDashboard  from './pages/AdminDashboard';
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -69,6 +71,8 @@ export default function App() {
         <Route path="/parts" element={<PartsPage addToCart={addToCart} />} />
         <Route path="/checkout" element={<CheckoutPage cart={cart} userData={userData} setUserData={setUserData} />} />
         <Route path="/payment" element={<PaymentPage cart={cart} userData={userData} clearCart={clearCart} />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
       <Footer />
     </>

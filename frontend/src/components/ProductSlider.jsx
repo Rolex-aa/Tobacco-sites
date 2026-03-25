@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from 'react';
-
-const products = [
-  { id: 1, img: '/machine/1.jpeg', name: 'NK Pro Series' },
-  { id: 2, img: '/machine/2.jpeg', name: 'Precision Tobacco Maker' },
-  { id: 3, img: '/machine/3.jpeg', name: 'High Efficiency Cutter' },
-  { id: 4, img: '/machine/4.jpeg', name: 'Industrial Grade Machine' },
-  { id: 5, img: '/machine/5.jpeg', name: 'Compact Tobacco Solution' },
-];
+import axios from 'axios';
 
 export default function ProductSlider() {
+  const [products, setProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    const fetchFeatured = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:5001/api/products?featured=true');
+        setProducts(data.data);
+      } catch (err) {
+        console.error('Fetch error:', err);
+      }
+    };
+    fetchFeatured();
+  }, []);
+
+  useEffect(() => {
+    if (products.length === 0) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % products.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [products]);
+
+  if (products.length === 0) return null; // Don't show slider if no featured products
 
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % products.length);
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
@@ -37,7 +46,7 @@ export default function ProductSlider() {
           <div className="relative h-[400px] md:h-[600px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
             {products.map((product, index) => (
               <div
-                key={product.id}
+                key={product._id}
                 className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
                   index === currentIndex 
                     ? 'opacity-100 translate-x-0 scale-100' 
@@ -45,7 +54,7 @@ export default function ProductSlider() {
                 }`}
               >
                 <img
-                  src={product.img}
+                  src={`http://localhost:5001${product.image}`}
                   alt={product.name}
                   className="w-full h-full object-contain bg-white/5"
                 />

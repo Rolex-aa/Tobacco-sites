@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function MachinePage({ addToCart }) {
-  // Creating an array of products based on the available images
-  const products = Array.from({ length: 7 }, (_, i) => ({
-    id: i + 1,
-    name: `NK Engineering Model ${5000 + i * 100}`,
-    image: `/machine/${i + 1}.jpeg`, // Using the actual blue machine images provided by the user
-    price: 100000 + (i * 5000),
-    description: 'High-speed tobacco making machine with automatic feeding system. Durable, low maintenance.',
-  }));
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:5001/api/products?category=machine');
+        setProducts(data.data);
+      } catch (err) {
+        console.error('Fetch error:', err);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div className="min-h-screen bg-nk-dark text-nk-text py-12 transition-colors duration-300">
@@ -37,7 +43,7 @@ export default function MachinePage({ addToCart }) {
               {/* Product Image */}
               <div className="bg-white p-6 h-64 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-nk-gold/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <img src={product.image} alt={product.name} className="max-w-full max-h-full object-contain drop-shadow-2xl transform hover:scale-110 transition-transform duration-500" />
+                <img src={`http://localhost:5001${product.image}`} alt={product.name} className="max-w-full max-h-full object-contain drop-shadow-2xl transform hover:scale-110 transition-transform duration-500" />
               </div>
 
               {/* Product Details */}
