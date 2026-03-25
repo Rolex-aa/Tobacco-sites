@@ -43,7 +43,7 @@ export default function RepairingSection() {
         </div>
 
         {/* Support Banner */}
-        <div className="mt-20 bg-nk-bg-subtle text-white rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group border border-nk-border">
+        <div className="mt-20 bg-nk-bg-subtle text-nk-text rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group border border-nk-border">
           <div className="absolute top-0 right-0 w-64 h-64 bg-nk-green/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
           <div className="relative z-10">
             <h3 className="text-2xl md:text-3xl font-bold mb-2 text-nk-text transition-colors duration-300">Need immediate technical help?</h3>

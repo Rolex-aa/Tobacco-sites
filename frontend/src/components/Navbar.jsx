@@ -23,8 +23,8 @@ export default function Navbar({ cart, updateQuantity, isDarkMode, toggleDarkMod
   return (
     <header className="sticky top-0 z-[999] bg-nk-dark/95 backdrop-blur-md border-b border-nk-border py-4 transition-colors duration-300">
       <div className="container mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
-        <div className="text-2xl font-black text-white tracking-tighter uppercase cursor-pointer flex items-center gap-2" onClick={() => handleScroll('hero')}>
-          <span className="text-nk-green-lt">🌿 NK</span> <span className="text-white">Engineering</span> <span className="text-nk-gold font-bold">& Works</span>
+        <div className="text-2xl font-black text-nk-text tracking-tighter uppercase cursor-pointer flex items-center gap-2" onClick={() => handleScroll('hero')}>
+          <span className="text-nk-green-lt">🌿 NK</span> <span className="text-nk-text">Engineering</span> <span className="text-nk-gold font-bold">& Works</span>
         </div>
         <nav className="flex items-center gap-8 flex-wrap relative">
           <button onClick={() => handleScroll('hero')} className="text-nk-text/80 text-[17px] font-bold hover:text-nk-gold transition-colors">Home</button>

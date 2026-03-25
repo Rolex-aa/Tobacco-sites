@@ -34,8 +34,8 @@ export default function ContactSection() {
     <section className="py-24 bg-gradient-to-br from-nk-dark to-nk-dark2" id="contact">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">📞 Contact Us to Order</h2>
-          <p className="text-lg text-white/70 max-w-xl mx-auto">Our team speaks Hindi & English. We are happy to help you!</p>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-nk-text mb-4">📞 Contact Us to Order</h2>
+          <p className="text-lg text-nk-text-subtle max-w-xl mx-auto">Our team speaks Hindi & English. We are happy to help you!</p>
         </div>
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Contact Info */}
@@ -46,14 +46,14 @@ export default function ContactSection() {
               { icon: '🏠', strong: 'Visit Our Office', val: '42, Industrial Area, Phase 2, New Delhi – 110020' },
               { icon: '🕐', strong: 'Working Hours', val: 'Mon – Sat: 9:00 AM to 6:00 PM' },
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-5 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
+              <div key={i} className="flex items-start gap-5 glass rounded-2xl p-6 transition-colors">
                 <span className="text-4xl shrink-0">{item.icon}</span>
                 <div>
                   <strong className="block text-nk-gold text-base font-bold mb-1">{item.strong}</strong>
                   {item.href ? (
-                    <a href={item.href} className="text-white/85 text-[17px] font-medium hover:text-nk-green-lt transition-colors">{item.val}</a>
+                    <a href={item.href} className="text-nk-text/85 text-[17px] font-medium hover:text-nk-green-lt transition-colors">{item.val}</a>
                   ) : (
-                    <span className="text-white/85 text-[17px] font-medium leading-relaxed block">{item.val}</span>
+                    <span className="text-nk-text/85 text-[17px] font-medium leading-relaxed block">{item.val}</span>
                   )}
                 </div>
               </div>
@@ -61,8 +61,8 @@ export default function ContactSection() {
           </div>
 
           {/* Enquiry Form */}
-          <form className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl" id="order-form" onSubmit={handleSubmit}>
-            <h3 className="text-2xl font-extrabold text-nk-dark mb-8">Send an Enquiry</h3>
+          <form className="bg-nk-bg-accent rounded-2xl p-8 md:p-10 shadow-2xl transition-colors duration-300" id="order-form" onSubmit={handleSubmit}>
+            <h3 className="text-2xl font-extrabold text-nk-text mb-8">Send an Enquiry</h3>
 
             <div className="space-y-5">
               {[
@@ -71,7 +71,7 @@ export default function ContactSection() {
                 { id: 'city', label: 'Your City / State', type: 'text', placeholder: 'e.g. Lucknow, UP' },
               ].map((field) => (
                 <div key={field.id}>
-                  <label htmlFor={field.id} className="block text-base font-bold text-nk-dark mb-2">{field.label}</label>
+                  <label htmlFor={field.id} className="block text-base font-bold text-nk-text mb-2">{field.label}</label>
                   <input
                     type={field.type} id={field.id}
                     placeholder={field.placeholder}
@@ -83,7 +83,7 @@ export default function ContactSection() {
                 </div>
               ))}
               <div>
-                <label htmlFor="message" className="block text-base font-bold text-nk-dark mb-2">Any Questions? (Optional)</label>
+                <label htmlFor="message" className="block text-base font-bold text-nk-text mb-2">Any Questions? (Optional)</label>
                 <textarea
                   id="message" rows="3"
                   placeholder="Write your question here..."

@@ -17,9 +17,9 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-20">
           
           <div className="lg:w-1/2 text-left">
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 backdrop-blur-md px-5 py-2.5 rounded-full mb-8 hover:bg-white/10 transition-colors group cursor-default">
+            <div className="inline-flex items-center gap-2 glass px-5 py-2.5 rounded-full mb-8 transition-colors group cursor-default">
               <span className="flex h-3 w-3 shrink-0 rounded-full bg-nk-gold animate-ping"></span>
-              <span className="text-white/80 text-sm font-bold tracking-widest uppercase">Now Shipping Across India</span>
+              <span className="text-nk-text/80 text-sm font-bold tracking-widest uppercase">Now Shipping Across India</span>
             </div>
             
             <h1 className="text-nk-text text-5xl md:text-8xl font-black leading-[1.05] mb-8 tracking-tighter transition-colors duration-300">
